@@ -65,10 +65,15 @@ https://proceedings.neurips.cc/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-
 VGG 모델은 Visual Geometry Group 이라는 약자를 가지는 신경망(CNN) 아키텍처로 대표적 예시로는 VGG16 , VGG19 가 있습니다. 숫자들은 layer의 층 수를 의미합니다.  2014년 이미지 분류에 높은 성능을 보여 알려지게 되었습니다. 당시 연구의 핵심은 네트워크의 깊이를 깊게 만드는 것이 성능에 어떤 영향을 미치는지를 확인하고자 한 것이며 이런 이유로 모든 kernal의 사이즈를 3*3으로 고정하였습니다. 연구 결과 그들은 깊이가 11층, 13층, 16층, 19층으로 깊어지면서 분류 에러가 감소하는 것을 관찰하였고 깊어질수록 성능이 좋아진다는 것을 보였습니다.
 <img width="800" alt="image" src="https://github.com/user-attachments/assets/62f74abb-1fb7-468d-91a8-64b87dc2b602">
 
-참고 문헌은 다음과 같다. 
+참고 문헌은 다음과 같습니다. 
 https://arxiv.org/pdf/1409.1556
 
 
+### 3.  ResNet
+ResNet의 핵심 개념은 잔차 학습(Residual Learning)으로, 깊은 네트워크에서 발생하는 gradient 소실 문제를 해결하기 위해Skip Connection을 이용합니다. 이 스킵 연결은 입력 데이터를 변환된 출력에 더함으로써, 깊은 네트워크에서 학습이 더 원활하게 이루어지도록 돕습니다. ResNet은 Residual Block이라는 구조를 쌓아 올리며, 이를 통해 네트워크가 깊어져도 학습 성능이 유지되거나 개선될 수 있습니다. ResNet은 이미지 분류, 객체 검출, 이미지 세분화와 같은 컴퓨터 비전 작업에서 탁월한 성능을 보여주며, 특히 전이 학습(Transfer Learning)에서 자주 사용됩니다.  대표적인 ResNet 모델로는 ResNet34, ResNet50이 있으며, 숫자는 계층의 깊이를 나타냅니다.
+<img width="800" alt="image" src="https://github.com/user-attachments/assets/b0003f19-18d2-491d-8216-dd4677e49832">
 
+참고 문헌은 다음과 같습니다. 
+https://arxiv.org/pdf/1512.03385
 
 

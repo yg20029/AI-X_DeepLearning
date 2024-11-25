@@ -1,7 +1,9 @@
 # TITLE : 100 Sports Image Classification
+=============
 
 
 Members:
+-------------
   김재준, 데이터사이언스학과, apolon0617@gmail.com
   박찬형, 데이터사이언스학과, chanhyoungpark@naver.com
   조윤규, 데이터사이언스학과, yg20029@gmail.com

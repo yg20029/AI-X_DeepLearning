@@ -35,6 +35,7 @@
 
 ## III.	Methodology -Explaining your choice of algorithms (methods)-Explaining features (if any)
 
+### -Explaining your choice of algorithms (methods)
 이번 프로젝트에서 이용할 모델의 기반은 CNN 모델입니다.
 CNN 모델은 이미지, 영상을 분석하기 위한 패턴을 직접 찾아 학습하고, 찾은 패턴을 이용하여 이미지를 분류합니다. CNN 이전의 모델인 Fully Connected layer 를 이용할 시, 지나치게 많은 모델 파라미터로 인하여 높은 overfitting 경향을 보이지만 CNN은 이를 방지 할 수 있습니다.
 CNN은 이미지의 각 픽셀들은 주변의 픽셀과 연관되어 있다는 가정 아래 시작합니다. 이미지에서는 비슷한 패턴이 다양한 픽셀 위치에서 생길 수 있으며 머신러닝 알고리즘은 이를 이용해 더 뛰어난 generalization 을 이루고자 합니다.
@@ -81,3 +82,6 @@ https://arxiv.org/pdf/1512.03385
 
 #### -등장 배경
 이 세 모델은 모두 ImageNet 데이터셋을 기반으로 한 대회(ILSVRC)에서 발표되었습니다. AlexNet은 2012년, VGG는 2014년, ResNet은 2015년에 발표되었습니다.
+
+
+### -Explaining features (if any)

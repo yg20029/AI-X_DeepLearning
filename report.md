@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/1b95e35b-5b42-405e-b6b9-36c9dd31d404)# TITLE : 100 Sports Image Classification
+# TITLE : 100 Sports Image Classification
 
 
 

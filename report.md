@@ -44,14 +44,21 @@ CNN에서 가중 평균(weighted average) 연산은 이미지나feature map의 �
 
 ### Convoultion Layer:
 컨볼루션 레이어는 입력 이미지를 Filter(Kernel)를 이용하여 탐색하면서 이미지의 feature들을 추출하고, 추출한 feature들을 Feature Map으로 생성합니다.
-<img width="565" alt="Screenshot 2024-11-25 at 22 48 41" src="https://github.com/user-attachments/assets/52923fa9-8ea9-496c-b089-a397a0ae16ce">
+
+<img width="500" alt="Screenshot 2024-11-25 at 22 48 41" src="https://github.com/user-attachments/assets/52923fa9-8ea9-496c-b089-a397a0ae16ce">
+
 
 Feature Detectors example:
 
-<img width="450" alt="image" src="https://github.com/user-attachments/assets/6d81e728-f120-45da-b9b9-714f8e847754">
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/6d81e728-f120-45da-b9b9-714f8e847754">
 
 
+### 1.  AlexNet
+AlexNet은 5개의 Convolution layer과3개의 fully connected layer 로 구성된 8계층 CNN 모델입니다. 두번째, 네번째, 다섯번째 컨볼루션 레이어들은 전 단계의 같은 채널의 특성맵들과만 연결되어 있는 반면, 세번째 컨볼루션 레이어는 전 단계의 두 채널의 특성맵들과 모두 연결되어 있습니다. 활성화 함수로는 RELU를 사용합니다. 또한 2개의 GPU로 병렬연산을 수행하기 위해서 병렬적인 구조로 설계되었습니다. 
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/a87f5482-3eb7-4bc3-8782-f6973de4657e">
 
+참고 문헌은 다음과 같습니다.
+https://proceedings.neurips.cc/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf
 
 
 

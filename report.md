@@ -44,7 +44,13 @@ CNN에서 가중 평균(weighted average) 연산은 이미지나feature map의 �
 
 ### Convoultion Layer:
 컨볼루션 레이어는 입력 이미지를 Filter(Kernel)를 이용하여 탐색하면서 이미지의 feature들을 추출하고, 추출한 feature들을 Feature Map으로 생성합니다.
-<img width="600" alt="image" src="https://github.com/user-attachments/assets/abeec306-e02f-4449-b7c0-c27b4d6cb8bd">
+<img width="565" alt="Screenshot 2024-11-25 at 22 48 41" src="https://github.com/user-attachments/assets/52923fa9-8ea9-496c-b089-a397a0ae16ce">
+
+Feature Detectors example:
+<img width="450" alt="image" src="https://github.com/user-attachments/assets/6d81e728-f120-45da-b9b9-714f8e847754">
+
+
+
 
 
 

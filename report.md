@@ -3,9 +3,9 @@
 
 
 ## Members:
->  김재준, 데이터사이언스학과, apolon0617@gmail.com
->  박찬형, 데이터사이언스학과, chanhyoungpark@naver.com
->  조윤규, 데이터사이언스학과, yg20029@gmail.com
+> ##### 김재준, 데이터사이언스학과, apolon0617@gmail.com
+> ##### 박찬형, 데이터사이언스학과, chanhyoungpark@naver.com
+> ##### 조윤규, 데이터사이언스학과, yg20029@gmail.com
 
 
 ## I.	Proposal (Option 1or 2)–This should be filled bysometime in early Nov.

@@ -77,3 +77,7 @@ ResNet의 핵심 개념은 잔차 학습(Residual Learning)으로, 깊은 네트
 https://arxiv.org/pdf/1512.03385
 
 
+
+
+
+이 세 모델은 모두 ImageNet 데이터셋을 기반으로 한 대회(ILSVRC)에서 발표되었습니다. AlexNet은 2012년, VGG는 2014년, ResNet은 2015년에 발표되었습니다.

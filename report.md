@@ -45,7 +45,7 @@ CNN에서 가중 평균(weighted average) 연산은 이미지나feature map의 �
 ### Convoultion Layer:
 컨볼루션 레이어는 입력 이미지를 Filter(Kernel)를 이용하여 탐색하면서 이미지의 feature들을 추출하고, 추출한 feature들을 Feature Map으로 생성합니다.
 
-<img width="500" alt="Screenshot 2024-11-25 at 22 48 41" src="https://github.com/user-attachments/assets/52923fa9-8ea9-496c-b089-a397a0ae16ce">
+<img width="300" alt="Screenshot 2024-11-25 at 22 48 41" src="https://github.com/user-attachments/assets/52923fa9-8ea9-496c-b089-a397a0ae16ce">
 
 
 Feature Detectors example:
@@ -55,10 +55,20 @@ Feature Detectors example:
 
 ### 1.  AlexNet
 AlexNet은 5개의 Convolution layer과3개의 fully connected layer 로 구성된 8계층 CNN 모델입니다. 두번째, 네번째, 다섯번째 컨볼루션 레이어들은 전 단계의 같은 채널의 특성맵들과만 연결되어 있는 반면, 세번째 컨볼루션 레이어는 전 단계의 두 채널의 특성맵들과 모두 연결되어 있습니다. 활성화 함수로는 RELU를 사용합니다. 또한 2개의 GPU로 병렬연산을 수행하기 위해서 병렬적인 구조로 설계되었습니다. 
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/a87f5482-3eb7-4bc3-8782-f6973de4657e">
+<img width="800" alt="image" src="https://github.com/user-attachments/assets/a87f5482-3eb7-4bc3-8782-f6973de4657e">
 
 참고 문헌은 다음과 같습니다.
 https://proceedings.neurips.cc/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf
+
+
+### 2.  VGG
+VGG 모델은 Visual Geometry Group 이라는 약자를 가지는 신경망(CNN) 아키텍처로 대표적 예시로는 VGG16 , VGG19 가 있습니다. 숫자들은 layer의 층 수를 의미합니다.  2014년 이미지 분류에 높은 성능을 보여 알려지게 되었습니다. 당시 연구의 핵심은 네트워크의 깊이를 깊게 만드는 것이 성능에 어떤 영향을 미치는지를 확인하고자 한 것이며 이런 이유로 모든 kernal의 사이즈를 3*3으로 고정하였습니다. 연구 결과 그들은 깊이가 11층, 13층, 16층, 19층으로 깊어지면서 분류 에러가 감소하는 것을 관찰하였고 깊어질수록 성능이 좋아진다는 것을 보였습니다.
+<img width="800" alt="image" src="https://github.com/user-attachments/assets/62f74abb-1fb7-468d-91a8-64b87dc2b602">
+
+참고 문헌은 다음과 같다. 
+https://arxiv.org/pdf/1409.1556
+
+
 
 
 

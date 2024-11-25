@@ -2,7 +2,7 @@
 
 
 
-##Members:
+## Members:
 -------------
   김재준, 데이터사이언스학과, apolon0617@gmail.com
   박찬형, 데이터사이언스학과, chanhyoungpark@naver.com

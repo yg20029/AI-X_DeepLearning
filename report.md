@@ -35,3 +35,11 @@
 
 ## III.	Methodology -Explaining your choice of algorithms (methods)-Explaining features (if any)
 
+이번 프로젝트에서 이용할 모델의 기반은 CNN 모델입니다.
+CNN 모델은 이미지, 영상을 분석하기 위한 패턴을 직접 찾아 학습하고, 찾은 패턴을 이용하여 이미지를 분류합니다. CNN 이전의 모델인 Fully Connected layer 를 이용할 시, 지나치게 많은 모델 파라미터로 인하여 높은 overfitting 경향을 보이지만 CNN은 이를 방지 할 수 있습니다.
+CNN은 이미지의 각 픽셀들은 주변의 픽셀과 연관되어 있다는 가정 아래 시작합니다. 이미지에서는 비슷한 패턴이 다양한 픽셀 위치에서 생길 수 있으며 머신러닝 알고리즘은 이를 이용해 더 뛰어난 generalization 을 이루고자 합니다.
+
+###Convolution:
+CNN에서 가중 평균(weighted average) 연산은 이미지나feature map의 모든 위치에서 수행되며, 이를 통해 다양한 패턴이나 특징을 탐지할 수 있습니다. 어떠한 패턴이 weight를 통과하느냐에 따라 다른 결과를 추출해 낼 수 있습니다.
+
+

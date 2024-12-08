@@ -65,7 +65,7 @@ ResNet 모델에서 조절 할 수 있는 하이퍼 파라미터는 learning_rat
 참고 문헌은 다음과 같다. 
 https://arxiv.org/pdf/1512.03385
 
-### IV. Evaluation & Analysis
+## IV. Evaluation & Analysis
 우리는 두 가지 ResNet 모델(ResNet18, ResNet34) 로 스포츠 데이터를 학습해 보았다.
 또한 각 모델에 대해 여러 하이퍼 파라미터 조합으로 학습을 진행하였다.  사용한 하이퍼 파라미터 조합은 다음과 같다.
 

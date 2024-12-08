@@ -68,6 +68,7 @@ https://arxiv.org/pdf/1512.03385
 ### IV. Evaluation & Analysis
 우리는 두 가지 ResNet 모델(ResNet18, ResNet34) 로 스포츠 데이터를 학습해 보았다.
 또한 각 모델에 대해 여러 하이퍼 파라미터 조합으로 학습을 진행하였다.  사용한 하이퍼 파라미터 조합은 다음과 같다.
+
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/b6b699eb-d121-4d72-b625-5a8028af9ad1">
 
 사용한 두 모델, 그리고 위의 하이퍼파라미터 조합 총 324가지이다. 하지만 이 모든 조합으로 모델 트레이닝을 하기에는 언제나 그렇듯이 시간과 컴퓨팅 용량이 충분치 않다. 따라서 우리는 랜덤으로 모델 15가지를 시도해 보았다.
@@ -94,11 +95,13 @@ wandb 워크스페이스에서 시각화 한 결과입니다.
 이제 각 모델별 train epoch에 따른 loss와 validation accuracy 를 보자. 
 
 다음은 Train loss 그래프이다. 
+
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/ee9c0fcd-1296-4e89-a78e-da7b2702b009">
 
 모든 모델의 train loss가 감소하는 것을 볼 수 있다.
 
 다음은 Validation loss 그래프이다. 
+
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/f3f2316a-46e7-4ae0-b9f3-35a308e23587">
 
 
@@ -106,6 +109,7 @@ wandb 워크스페이스에서 시각화 한 결과입니다.
 하지만 train loss와 다르게 가끔 튀는 현상이 발생한다. 모델은 train data 를 기반으로 학습이 되지만 validation loss는 모델이 처음 보는 데이터, 즉 학습할때 이용하지 않는 데이터에 대한 loss이기에 꼭 꾸준히 감소하지는 않는다.
 
 다음은 Validation accuracy 그래프이다.
+
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/eb631da4-ccaa-4d60-8b4a-28dc63b4e8ba">
 
 이 그래프를 통해 확인할 수 있는 것은, 무조건 epoch를 많이 돌린다고 모델의 validation accuracy 가 오르지 않는다는 것이다. 또한 learning rate, optimizer_type 에 따라 모델별로 optimize 되는데 걸리는 epoch 수, 시간이 차이가 난다. 
@@ -121,14 +125,17 @@ wandb 워크스페이스에서 시각화 한 결과입니다.
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/b70df130-d294-433b-8e8a-78219ec28058">
 
 다음은 Train loss 그래프이다. 
+
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/d1b33546-e022-4626-adc0-9b03b80298ff">
 
 
 다음은 Validation loss 그래프이다. 
+
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/71f98f66-52b6-4678-b18e-bd3fc9cb20ef">
 
 
 다음은 Validation accuracy 그래프이다.
+
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/88aee40e-2200-4e56-9d35-d5eeb49c53e5">
 
 

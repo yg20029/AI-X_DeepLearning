@@ -1,5 +1,3 @@
-![image](https://github.com/user-attachments/assets/1967716c-6899-42d7-a796-549e489d5f75)# TITLE : 100 Sports Image Classification
-
 
 
 ## Members:

@@ -71,8 +71,7 @@ https://arxiv.org/pdf/1512.03385
 
 우리는 두 가지 ResNet 모델(ResNet18, ResNet34) 로 스포츠 데이터를 학습해 보았다.
 또한 각 모델에 대해 여러 하이퍼 파라미터 조합으로 학습을 진행하였다.  사용한 하이퍼 파라미터 조합은 다음과 같다.
-
-![image](https://github.com/user-attachments/assets/b6b699eb-d121-4d72-b625-5a8028af9ad1)
+<img width="800" alt="image" src="https://github.com/user-attachments/assets/b6b699eb-d121-4d72-b625-5a8028af9ad1">
 
 사용한 두 모델, 그리고 위의 하이퍼파라미터 조합 총 324가지이다. 하지만 이 모든 조합으로 모델 트레이닝을 하기에는 언제나 그렇듯이 시간과 컴퓨팅 용량이 충분치 않다. 따라서 우리는 랜덤으로 모델 15가지를 시도해 보았다.
 

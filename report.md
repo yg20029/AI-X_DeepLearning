@@ -35,7 +35,7 @@
 데이터 다운로드 링크
 https://www.kaggle.com/datasets/gpiosenka/sports-classification?select=train
 
-## III.	Methodology -Explaining your choice of algorithms (methods)-Explaining features (if any)
+## III.Methodology -Explaining your choice of algorithms (methods)-Explaining features (if any)
 
 ### -Explaining your choice of algorithms (methods)
 이번 프로젝트에서 이용할 모델의 기반은 CNN 모델이다.
@@ -61,14 +61,10 @@ ResNet의 핵심 개념은 잔차 학습(Residual Learning)으로, 깊은 네트
 
 <img width="800" alt="image" src="https://github.com/user-attachments/assets/b0003f19-18d2-491d-8216-dd4677e49832">
 
+### -Explaining features (if any)
+
+ResNet 모델에서 조절 할 수 있는 하이퍼 파라미터는 learning_rate, batch_size, epochs, weight_decay, optimizer등이 존재한다. learning_rate는 모델이 가중치를 업데이트할 때 사용하는 스텝 크기를 결정한다. batch_size는 한 번의 학습 업데이트에서 처리되는 데이터 샘플의 수를 나타낸다. epochs 전체 데이터셋을 몇 번 학습하는지 나타낸다. weight_decay는 모델의 가중치에 대해 L2 정규화를 적용하여 과적합을 방지하는 데 사용한다. optimizer는 가중치를 업데이트하는 방식이다. SDG와 ADAM의 두 가지를 사용했다. SDG는 기울기(Gradient)를 사용해 손실 함수의 값을 최소화하는 방향으로 모델의 가중치를 업데이트하는 기본적인 최적화 알고리즘이다. ADAM은 학습률을 자동으로 조정하며 SGD의 단점을 개선한 최적화 알고리이다.
+
 참고 문헌은 다음과 같다. 
 https://arxiv.org/pdf/1512.03385
 
-
-
-
-#### -등장 배경
-이 세 모델은 모두 ImageNet 데이터셋을 기반으로 한 대회(ILSVRC)에서 발표되었으며 AlexNet은 2012년, VGG는 2014년, ResNet은 2015년에 발표되었다.       
-
-       
-### -Explaining features (if any)

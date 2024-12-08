@@ -112,7 +112,7 @@ Wandb sweep을 거친 후 나온 파이썬 로그는 다음과 같다.
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/aa086cc7-8ba8-491b-8e53-1b2359ae7886">
 
 
-wandb 워크스페이스에서 시각화 한 결과입니다.
+wandb 워크스페이스에서 다음 그림처럼 한 sweep 별 시각화 자료들을 볼 수 있다.
 
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/d8a3b9c3-9df4-4245-8ce3-9a8afcd3fa73">
 

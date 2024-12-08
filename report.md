@@ -153,10 +153,17 @@ ResNet34 의 경우 경우 batch_size = 32, epochs = 10, learning_rate: 0.001, S
 
 ##V. Related Work (e.g., existing studies)
 
+torch
+
 torch.utils.data.DataLoader
+
 torch.utils.data.Dataset
 
+torchvision.datasets
 
+torchvision.transforms
+
+torchvision.models
 
 
 

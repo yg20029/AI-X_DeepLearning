@@ -55,7 +55,7 @@ Feature Detectors example:
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/6d81e728-f120-45da-b9b9-714f8e847754">
 
 
-### ResNet
+## ResNet
 ResNet의 핵심 개념은 잔차 학습(Residual Learning)으로, 깊은 네트워크에서 발생하는 gradient 소실 문제를 해결하기 위해Skip Connection을 이용한다. 이 스킵 연결은 입력 데이터를 변환된 출력에 더함으로써, 깊은 네트워크에서 학습이 더 원활하게 이루어지도록 돕는다. ResNet은 Residual Block이라는 구조를 쌓아 올리며, 이를 통해 네트워크가 깊어져도 학습 성능이 유지되거나 개선될 수 있다. ResNet은 이미지 분류, 객체 검출, 이미지 세분화와 같은 컴퓨터 비전 작업에서 탁월한 성능을 보여주며, 특히 전이 학습(Transfer Learning)에서 자주 사용된다.  대표적인 ResNet 모델로는 ResNet34, ResNet50이 있으며, 숫자는 계층의 깊이를 나타낸다.
 
 <img width="800" alt="image" src="https://github.com/user-attachments/assets/b0003f19-18d2-491d-8216-dd4677e49832">
@@ -65,8 +65,7 @@ ResNet 모델에서 조절 할 수 있는 하이퍼 파라미터는 learning_rat
 참고 문헌은 다음과 같다. 
 https://arxiv.org/pdf/1512.03385
 
-## IV. Evaluation & Analysis
-
+### IV. Evaluation & Analysis
 우리는 두 가지 ResNet 모델(ResNet18, ResNet34) 로 스포츠 데이터를 학습해 보았다.
 또한 각 모델에 대해 여러 하이퍼 파라미터 조합으로 학습을 진행하였다.  사용한 하이퍼 파라미터 조합은 다음과 같다.
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/b6b699eb-d121-4d72-b625-5a8028af9ad1">
@@ -82,29 +81,32 @@ Wandb sweep을 거친 후 나온 파이썬 로그는 다음과 같다.
 
 wandb 워크스페이스에서 시각화 한 결과입니다.
 
-![image](https://github.com/user-attachments/assets/d8a3b9c3-9df4-4245-8ce3-9a8afcd3fa73)
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/d8a3b9c3-9df4-4245-8ce3-9a8afcd3fa73">
 
 그럼 나온 결과들을 하나하나 풀어보자. 
 먼저 ResNet18 모델이다.
 총 hyperparameter searching 하는데 걸린 시간은 3h 29m 이다.
 
-![image](https://github.com/user-attachments/assets/a13b3a42-a0fe-4a05-b324-a5f4e8791ed5)
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/a13b3a42-a0fe-4a05-b324-a5f4e8791ed5">
+
 
 전체적인 하이퍼파라미터 조합에 따른 validation accuracy 추이는 다음과 같다.
 이제 각 모델별 train epoch에 따른 loss와 validation accuracy 를 보자. 
 
 다음은 Train loss 그래프이다. 
-![image](https://github.com/user-attachments/assets/ee9c0fcd-1296-4e89-a78e-da7b2702b009)
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/ee9c0fcd-1296-4e89-a78e-da7b2702b009">
+
 모든 모델의 train loss가 감소하는 것을 볼 수 있다.
 
 다음은 Validation loss 그래프이다. 
-![image](https://github.com/user-attachments/assets/f3f2316a-46e7-4ae0-b9f3-35a308e23587)
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/f3f2316a-46e7-4ae0-b9f3-35a308e23587">
+
 
 마찬가지로 validation loss 도 감소하는 것을 볼 수 있다. 
 하지만 train loss와 다르게 가끔 튀는 현상이 발생한다. 모델은 train data 를 기반으로 학습이 되지만 validation loss는 모델이 처음 보는 데이터, 즉 학습할때 이용하지 않는 데이터에 대한 loss이기에 꼭 꾸준히 감소하지는 않는다.
 
 다음은 Validation accuracy 그래프이다.
-![image](https://github.com/user-attachments/assets/eb631da4-ccaa-4d60-8b4a-28dc63b4e8ba)
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/eb631da4-ccaa-4d60-8b4a-28dc63b4e8ba">
 
 이 그래프를 통해 확인할 수 있는 것은, 무조건 epoch를 많이 돌린다고 모델의 validation accuracy 가 오르지 않는다는 것이다. 또한 learning rate, optimizer_type 에 따라 모델별로 optimize 되는데 걸리는 epoch 수, 시간이 차이가 난다. 
 
@@ -116,16 +118,19 @@ wandb 워크스페이스에서 시각화 한 결과입니다.
 다음으로 ResNet34 모델에 대해서 같은 형식으로 살펴볼 것이다.
 총 hyperparameter searching 하는데 걸린 시간은 4h 27m 이다.
 
-![image](https://github.com/user-attachments/assets/b70df130-d294-433b-8e8a-78219ec28058)
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/b70df130-d294-433b-8e8a-78219ec28058">
 
 다음은 Train loss 그래프이다. 
-![image](https://github.com/user-attachments/assets/d1b33546-e022-4626-adc0-9b03b80298ff)
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/d1b33546-e022-4626-adc0-9b03b80298ff">
+
 
 다음은 Validation loss 그래프이다. 
-![image](https://github.com/user-attachments/assets/71f98f66-52b6-4678-b18e-bd3fc9cb20ef)
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/71f98f66-52b6-4678-b18e-bd3fc9cb20ef">
+
 
 다음은 Validation accuracy 그래프이다.
-![image](https://github.com/user-attachments/assets/88aee40e-2200-4e56-9d35-d5eeb49c53e5)
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/88aee40e-2200-4e56-9d35-d5eeb49c53e5">
+
 
 
 각 그래프가 가지는 의미는 ResNet18 과 동일하다.

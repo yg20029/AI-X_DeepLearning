@@ -18,7 +18,7 @@
 
 ## II.	Datasets-Describing your dataset 
 
-이번 프로젝트에서 사용할 데이터셋은 100개의 서로 다른 스포츠 카테고리를 포함하는 이미지 데이터셋이다. 이 데이터셋은 주로 인터넷 검색을 통해 수집되었으며, 다음과 같은 특징을 가지고 있다.
+이번 프로젝트에서 사용할 데이터셋은 kaggle 사이트에서 가져온 100개의 서로 다른 스포츠 카테고리를 포함하는 이미지 데이터셋이다. 이 데이터셋은 주로 인터넷 검색을 통해 수집되었으며, 다음과 같은 특징을 가지고 있다.
 ### 1.	데이터셋 구조:
 > * #### 훈련 데이터 (Train Set): 총 13,493개의 이미지로, 모델 학습을 위한 주요 데이터이다.
 > * #### 검증 데이터 (Validation Set): 총 500개의 이미지로, 모델의 하이퍼파라미터 조정과 성능 검증에 사용된다.
@@ -32,6 +32,8 @@
 
 이 데이터셋을 활용하여 스포츠 이미지를 학습하고, 모델이 다양한 스포츠 활동을 정확히 분류할 수 있도록 하는 것이 목표이다. 이 프로젝트를 통해 이미지 분류 모델의 구축 및 평가, 전이 학습 적용 등 여러 딥러닝 기술을 직접 실험할 수 있다.
 
+데이터 다운로드 링크
+https://www.kaggle.com/datasets/gpiosenka/sports-classification?select=train
 
 ## III.	Methodology -Explaining your choice of algorithms (methods)-Explaining features (if any)
 
@@ -47,34 +49,14 @@ CNN에서 가중 평균(weighted average) 연산은 이미지나feature map의 �
 ### Convoultion Layer:
 컨볼루션 레이어는 입력 이미지를 Filter(Kernel)를 이용하여 탐색하면서 이미지의 feature들을 추출하고, 추출한 feature들을 Feature Map으로 생성한다.
 
-
 <img width="300" alt="Screenshot 2024-11-25 at 22 48 41" src="https://github.com/user-attachments/assets/52923fa9-8ea9-496c-b089-a397a0ae16ce">
-
 
 Feature Detectors example:
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/6d81e728-f120-45da-b9b9-714f8e847754">
 
 
-### 1.  AlexNet
-AlexNet은 5개의 Convolution layer와 3개의 fully connected layer 로 구성된 8계층 CNN 모델이다. 두번째, 네번째, 다섯번째 컨볼루션 레이어들은 전 단계의 같은 채널의 특성맵들과만 연결되어 있는 반면, 세번째 컨볼루션 레이어는 전 단계의 두 채널의 특성맵들과 모두 연결되어 있다. 활성화 함수로는 RELU를 사용하였다. 또한 2개의 GPU로 병렬연산을 수행하기 위해서 병렬적인 구조로 설계되었다. 
-
-<img width="800" alt="image" src="https://github.com/user-attachments/assets/a87f5482-3eb7-4bc3-8782-f6973de4657e">
-
-참고 문헌은 다음과 같다.
-https://proceedings.neurips.cc/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf
-
-
-### 2.  VGG
-VGG 모델은 Visual Geometry Group 이라는 약자를 가지는 신경망(CNN) 아키텍처로 대표적 예시로는 VGG16 , VGG19 가 있다 숫자들은 layer의 층 수를 의미한다. 2014년 이미지 분류에 높은 성능을 보여 알려지게 되었다. 당시 연구의 핵심은 네트워크의 깊이를 깊게 만드는 것이 성능에 어떤 영향을 미치는지를 확인하고자 한 것이며 이런 이유로 모든 kernal의 사이즈를 3*3으로 고정하였다. 연구 결과 그들은 깊이가 11층, 13층, 16층, 19층으로 깊어지면서 분류 에러가 감소하는 것을 관찰하였고 깊어질수록 성능이 좋아진다는 것을 보였다.
-
-<img width="800" alt="image" src="https://github.com/user-attachments/assets/62f74abb-1fb7-468d-91a8-64b87dc2b602">
-
-참고 문헌은 다음과 같다. 
-https://arxiv.org/pdf/1409.1556
-
-
-### 3.  ResNet
+### ResNet
 ResNet의 핵심 개념은 잔차 학습(Residual Learning)으로, 깊은 네트워크에서 발생하는 gradient 소실 문제를 해결하기 위해Skip Connection을 이용한다. 이 스킵 연결은 입력 데이터를 변환된 출력에 더함으로써, 깊은 네트워크에서 학습이 더 원활하게 이루어지도록 돕는다. ResNet은 Residual Block이라는 구조를 쌓아 올리며, 이를 통해 네트워크가 깊어져도 학습 성능이 유지되거나 개선될 수 있다. ResNet은 이미지 분류, 객체 검출, 이미지 세분화와 같은 컴퓨터 비전 작업에서 탁월한 성능을 보여주며, 특히 전이 학습(Transfer Learning)에서 자주 사용된다.  대표적인 ResNet 모델로는 ResNet34, ResNet50이 있으며, 숫자는 계층의 깊이를 나타낸다.
 
 <img width="800" alt="image" src="https://github.com/user-attachments/assets/b0003f19-18d2-491d-8216-dd4677e49832">

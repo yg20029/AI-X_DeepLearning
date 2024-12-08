@@ -65,7 +65,7 @@ ResNet의 핵심 개념은 잔차 학습(Residual Learning)으로, 깊은 네트
 
 <img width="800" alt="image" src="https://github.com/user-attachments/assets/b0003f19-18d2-491d-8216-dd4677e49832">
 
-ResNet 모델에서 조절 할 수 있는 하이퍼 파라미터는 learning_rate, batch_size, epochs, weight_decay, optimizer등이 존재한다. learning_rate는 모델이 가중치를 업데이트할 때 사용하는 스텝 크기를 결정한다. batch_size는 한 번의 학습 업데이트에서 처리되는 데이터 샘플의 수를 나타낸다. epochs 전체 데이터셋을 몇 번 학습하는지 나타낸다. weight_decay는 모델의 가중치에 대해 L2 정규화를 적용하여 과적합을 방지하는 데 사용한다. optimizer는 가중치를 업데이트하는 방식이다. SDG와 ADAM의 두 가지를 사용했다. SDG는 기울기(Gradient)를 사용해 손실 함수의 값을 최소화하는 방향으로 모델의 가중치를 업데이트하는 기본적인 최적화 알고리즘이다. ADAM은 학습률을 자동으로 조정하며 SGD의 단점을 개선한 최적화 알고리이다.
+ResNet 모델에서 조절 할 수 있는 하이퍼 파라미터는 learning_rate, batch_size, epochs, weight_decay, optimizer등이 존재한다. learning_rate는 모델이 가중치를 업데이트할 때 사용하는 스텝 크기를 조절하는데, 이를 통해서 학습 속도와 학습 정확도를 조절 할 수 있다. batch_size는 한 번의 학습 업데이트에서 처리되는 데이터 샘플의 수로 사이즈가 클수록 학습이 안정적이고 속도가 증가하지만, 많은 메모리를 사용한다. epochs는 전체 데이터셋을 몇 번 학습하는지 나타내는데, 대부분의 경우 높을수록 로스가 감소하게 되지만 너무 높은 경우 데이터의 과적합이 일어날 수 있다. weight_decay는 모델의 가중치에 대해 L2 정규화를 적용하여 과적합을 방지하는 데 사용한다. optimizer는 가중치를 업데이트하는 방식이다. SDG와 ADAM의 두 가지를 사용했다. SDG는 기울기(Gradient)를 사용해 손실 함수의 값을 최소화하는 방향으로 모델의 가중치를 업데이트하는 기본적인 최적화 알고리즘이다. ADAM은 학습률을 자동으로 조정하며 이전 단계의 기울기의 평균과 분산을 통해 SGD의 단점을 개선한 최적화 알고리즘이다.
 
 ###Data preprocessing
 

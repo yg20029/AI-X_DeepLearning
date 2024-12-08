@@ -60,8 +60,6 @@ ResNet의 핵심 개념은 잔차 학습(Residual Learning)으로, 깊은 네트
 
 <img width="800" alt="image" src="https://github.com/user-attachments/assets/b0003f19-18d2-491d-8216-dd4677e49832">
 
-### -Explaining features (if any)
-
 ResNet 모델에서 조절 할 수 있는 하이퍼 파라미터는 learning_rate, batch_size, epochs, weight_decay, optimizer등이 존재한다. learning_rate는 모델이 가중치를 업데이트할 때 사용하는 스텝 크기를 결정한다. batch_size는 한 번의 학습 업데이트에서 처리되는 데이터 샘플의 수를 나타낸다. epochs 전체 데이터셋을 몇 번 학습하는지 나타낸다. weight_decay는 모델의 가중치에 대해 L2 정규화를 적용하여 과적합을 방지하는 데 사용한다. optimizer는 가중치를 업데이트하는 방식이다. SDG와 ADAM의 두 가지를 사용했다. SDG는 기울기(Gradient)를 사용해 손실 함수의 값을 최소화하는 방향으로 모델의 가중치를 업데이트하는 기본적인 최적화 알고리즘이다. ADAM은 학습률을 자동으로 조정하며 SGD의 단점을 개선한 최적화 알고리이다.
 
 참고 문헌은 다음과 같다. 
@@ -71,7 +69,7 @@ https://arxiv.org/pdf/1512.03385
 
 우리는 두 가지 ResNet 모델(ResNet18, ResNet34) 로 스포츠 데이터를 학습해 보았다.
 또한 각 모델에 대해 여러 하이퍼 파라미터 조합으로 학습을 진행하였다.  사용한 하이퍼 파라미터 조합은 다음과 같다.
-<img width="800" alt="image" src="https://github.com/user-attachments/assets/b6b699eb-d121-4d72-b625-5a8028af9ad1">
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/b6b699eb-d121-4d72-b625-5a8028af9ad1">
 
 사용한 두 모델, 그리고 위의 하이퍼파라미터 조합 총 324가지이다. 하지만 이 모든 조합으로 모델 트레이닝을 하기에는 언제나 그렇듯이 시간과 컴퓨팅 용량이 충분치 않다. 따라서 우리는 랜덤으로 모델 15가지를 시도해 보았다.
 
@@ -79,7 +77,8 @@ https://arxiv.org/pdf/1512.03385
 
 Wandb sweep을 거친 후 나온 파이썬 로그는 다음과 같다.
 
-![image](https://github.com/user-attachments/assets/aa086cc7-8ba8-491b-8e53-1b2359ae7886)
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/aa086cc7-8ba8-491b-8e53-1b2359ae7886">
+
 
 wandb 워크스페이스에서 시각화 한 결과입니다.
 

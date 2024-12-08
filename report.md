@@ -1,4 +1,4 @@
-# TITLE : 100 Sports Image Classification
+![image](https://github.com/user-attachments/assets/1967716c-6899-42d7-a796-549e489d5f75)# TITLE : 100 Sports Image Classification
 
 
 
@@ -67,4 +67,85 @@ ResNet 모델에서 조절 할 수 있는 하이퍼 파라미터는 learning_rat
 
 참고 문헌은 다음과 같다. 
 https://arxiv.org/pdf/1512.03385
+
+## IV. Evaluation & Analysis
+
+우리는 두 가지 ResNet 모델(ResNet18, ResNet34) 로 스포츠 데이터를 학습해 보았다.
+또한 각 모델에 대해 여러 하이퍼 파라미터 조합으로 학습을 진행하였다.  사용한 하이퍼 파라미터 조합은 다음과 같다.
+
+![image](https://github.com/user-attachments/assets/b6b699eb-d121-4d72-b625-5a8028af9ad1)
+
+사용한 두 모델, 그리고 위의 하이퍼파라미터 조합 총 324가지이다. 하지만 이 모든 조합으로 모델 트레이닝을 하기에는 언제나 그렇듯이 시간과 컴퓨팅 용량이 충분치 않다. 따라서 우리는 랜덤으로 모델 15가지를 시도해 보았다.
+
+하이퍼파라미터 튜닝을 위해서 우리는 wandb라는 파이썬 라이브러리를 사용했다. Wandb는 머신러닝 및 딥러닝 프로젝트의 추이 추적, 시각화, 모델 관찰 등을 지원하는 도구로 특히 하이퍼파라미터 서칭 이후 각 모델들의 차이를 시각화 하는데 좋다. 
+
+Wandb sweep을 거친 후 나온 파이썬 로그는 다음과 같다.
+
+![image](https://github.com/user-attachments/assets/aa086cc7-8ba8-491b-8e53-1b2359ae7886)
+
+wandb 워크스페이스에서 시각화 한 결과입니다.
+
+![image](https://github.com/user-attachments/assets/d8a3b9c3-9df4-4245-8ce3-9a8afcd3fa73)
+
+그럼 나온 결과들을 하나하나 풀어보자. 
+먼저 ResNet18 모델이다.
+총 hyperparameter searching 하는데 걸린 시간은 3h 29m 이다.
+
+![image](https://github.com/user-attachments/assets/a13b3a42-a0fe-4a05-b324-a5f4e8791ed5)
+
+전체적인 하이퍼파라미터 조합에 따른 validation accuracy 추이는 다음과 같다.
+이제 각 모델별 train epoch에 따른 loss와 validation accuracy 를 보자. 
+
+다음은 Train loss 그래프이다. 
+![image](https://github.com/user-attachments/assets/ee9c0fcd-1296-4e89-a78e-da7b2702b009)
+모든 모델의 train loss가 감소하는 것을 볼 수 있다.
+
+다음은 Validation loss 그래프이다. 
+![image](https://github.com/user-attachments/assets/f3f2316a-46e7-4ae0-b9f3-35a308e23587)
+
+마찬가지로 validation loss 도 감소하는 것을 볼 수 있다. 
+하지만 train loss와 다르게 가끔 튀는 현상이 발생한다. 모델은 train data 를 기반으로 학습이 되지만 validation loss는 모델이 처음 보는 데이터, 즉 학습할때 이용하지 않는 데이터에 대한 loss이기에 꼭 꾸준히 감소하지는 않는다.
+
+다음은 Validation accuracy 그래프이다.
+![image](https://github.com/user-attachments/assets/eb631da4-ccaa-4d60-8b4a-28dc63b4e8ba)
+
+이 그래프를 통해 확인할 수 있는 것은, 무조건 epoch를 많이 돌린다고 모델의 validation accuracy 가 오르지 않는다는 것이다. 또한 learning rate, optimizer_type 에 따라 모델별로 optimize 되는데 걸리는 epoch 수, 시간이 차이가 난다. 
+
+결론
+15가지의 하이퍼 파라미터 조합을 랜덤으로 서칭한 결과 Resnet18의 경우 batch_size = 32, epochs = 5, learning_rate: 0.001, SGD optimizer (momentum = 0.9),  weight_decay = 0.001 의 조합으로 train 한 모델이 validation accuracy 0.912 로 가장 좋은 generalization ability 를 보여주었다.
+
+위 그래프에서 해당 모델의 추이는 serene-sweep-12 에서 확인할 수 있다.
+
+다음으로 ResNet34 모델에 대해서 같은 형식으로 살펴볼 것이다.
+총 hyperparameter searching 하는데 걸린 시간은 4h 27m 이다.
+
+![image](https://github.com/user-attachments/assets/b70df130-d294-433b-8e8a-78219ec28058)
+
+다음은 Train loss 그래프이다. 
+![image](https://github.com/user-attachments/assets/d1b33546-e022-4626-adc0-9b03b80298ff)
+
+다음은 Validation loss 그래프이다. 
+![image](https://github.com/user-attachments/assets/71f98f66-52b6-4678-b18e-bd3fc9cb20ef)
+
+다음은 Validation accuracy 그래프이다.
+![image](https://github.com/user-attachments/assets/88aee40e-2200-4e56-9d35-d5eeb49c53e5)
+
+
+각 그래프가 가지는 의미는 ResNet18 과 동일하다.
+
+ResNet34 의 경우 경우 batch_size = 32, epochs = 10, learning_rate: 0.001, SGD optimizer (momentum = 0.9),  weight_decay = 0.001 의 조합으로 train 한 모델이 validation accuracy 0.952 로 가장 좋은 generalization ability 를 보여주었다. 해당 모델의 추이는 restful-sweep-10 으로 확인 할 수 있다.
+
+우리가 직접 수집한 몇가지 test data로 모델의 분류 여부를 확인해보려 한다.
+
+
+
+
+
+
+
+
+
+
+
+
 

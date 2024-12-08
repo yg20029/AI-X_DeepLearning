@@ -55,7 +55,7 @@ Feature Detectors example:
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/6d81e728-f120-45da-b9b9-714f8e847754">
 
 
-## ResNet
+### ResNet
 ResNet의 핵심 개념은 잔차 학습(Residual Learning)으로, 깊은 네트워크에서 발생하는 gradient 소실 문제를 해결하기 위해Skip Connection을 이용한다. 이 스킵 연결은 입력 데이터를 변환된 출력에 더함으로써, 깊은 네트워크에서 학습이 더 원활하게 이루어지도록 돕는다. ResNet은 Residual Block이라는 구조를 쌓아 올리며, 이를 통해 네트워크가 깊어져도 학습 성능이 유지되거나 개선될 수 있다. ResNet은 이미지 분류, 객체 검출, 이미지 세분화와 같은 컴퓨터 비전 작업에서 탁월한 성능을 보여주며, 특히 전이 학습(Transfer Learning)에서 자주 사용된다.  대표적인 ResNet 모델로는 ResNet34, ResNet50이 있으며, 숫자는 계층의 깊이를 나타낸다.
 
 <img width="800" alt="image" src="https://github.com/user-attachments/assets/b0003f19-18d2-491d-8216-dd4677e49832">

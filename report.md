@@ -31,6 +31,11 @@ AI-X 딥러닝 : 최종 프로젝트를 위한 블로그
 
 이 데이터셋을 활용하여 스포츠 이미지를 학습하고, 모델이 다양한 스포츠 활동을 정확히 분류할 수 있도록 하는 것이 목표이다. 이 프로젝트를 통해 이미지 분류 모델의 구축 및 평가, 전이 학습 적용 등 여러 딥러닝 기술을 직접 실험할 수 있다.
 
+100가지 스포츠 데이터 예시
+
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/17f13efb-1fb1-478e-b22f-175ab982d0a4">
+
+
 데이터 다운로드 링크
 https://www.kaggle.com/datasets/gpiosenka/sports-classification?select=train
 
@@ -146,7 +151,10 @@ ResNet34 의 경우 경우 batch_size = 32, epochs = 10, learning_rate: 0.001, S
 
 우리가 직접 수집한 몇가지 test data로 모델의 분류 여부를 확인해보려 한다.
 
+##V. Related Work (e.g., existing studies)
 
+torch.utils.data.DataLoader
+torch.utils.data.Dataset
 
 
 

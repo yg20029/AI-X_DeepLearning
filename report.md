@@ -98,6 +98,9 @@ DataPreprocessing 과정을 거치고 나면, 우리 눈으로는 알아볼 수 
 https://arxiv.org/pdf/1512.03385
 
 ## IV. Evaluation & Analysis
+
+### Validation
+
 우리는 두 가지 ResNet 모델(ResNet18, ResNet34) 로 스포츠 데이터를 학습해 보았다.
 또한 각 모델에 대해 여러 하이퍼 파라미터 조합으로 학습을 진행하였다.  사용한 하이퍼 파라미터 조합은 다음과 같다.
 
@@ -174,8 +177,11 @@ Validation accuracy
 
 각 그래프가 가지는 의미는 ResNet18 과 동일하다.
 
-ResNet34 의 경우 경우 batch_size = 32, epochs = 10, learning_rate: 0.001, SGD optimizer (momentum = 0.9),  weight_decay = 0.001 의 조합으로 train 한 모델이 validation accuracy 0.952 로 가장 좋은 generalization ability 를 보여주었다. 해당 모델의 추이는 restful-sweep-10 으로 확인 할 수 있다.
+ResNet34 의 경우 경우 batch_size = 32, epochs = 10, learning_rate: 0.001, SGD optimizer (momentum = 0.9),  weight_decay = 0.001 의 조합으로 train 한 모델이 validation accuracy 0.952 로 가장 좋은 generalization ability 를 보여주었다. 
 
+해당 모델의 추이는 restful-sweep-10 으로 확인 할 수 있다.
+
+### Test
 하이퍼파라미터 서칭을 통해 최적의 모델을 찾은 후 이를 이용해 제공된 500개의 test set을 이용해 final test accuracy를 도출해 보았다.
 
 물론 모델을 처음 훈련할 때 사용한 validation transform 을 먼저 test set 이미지에 적용해야 한다. 여기에 IMAGENET1K_V1 의 평균과 표준편차로 normalization 을 진행하는 것과 224*224 로 픽셀 사이즈를 맞추는 것이 있다. 간단한 변형을 거친 후 모델이 보는 이미지는 다음과 같다.

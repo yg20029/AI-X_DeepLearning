@@ -117,7 +117,7 @@ wandb 워크스페이스에서 다음 그림처럼 한 sweep 별 시각화 자�
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/d8a3b9c3-9df4-4245-8ce3-9a8afcd3fa73">
 
 그럼 나온 결과들을 하나하나 풀어보자. 
-먼저 ResNet18 모델이다.
+#### ResNet18 
 총 hyperparameter searching 하는데 걸린 시간은 3h 29m 이다.
 
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/a13b3a42-a0fe-4a05-b324-a5f4e8791ed5">
@@ -126,13 +126,13 @@ wandb 워크스페이스에서 다음 그림처럼 한 sweep 별 시각화 자�
 전체적인 하이퍼파라미터 조합에 따른 validation accuracy 추이는 다음과 같다.
 이제 각 모델별 train epoch에 따른 loss와 validation accuracy 를 보자. 
 
-다음은 Train loss 그래프이다. 
+Train loss 
 
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/ee9c0fcd-1296-4e89-a78e-da7b2702b009">
 
 모든 모델의 train loss가 감소하는 것을 볼 수 있다.
 
-다음은 Validation loss 그래프이다. 
+Validation loss  
 
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/f3f2316a-46e7-4ae0-b9f3-35a308e23587">
 
@@ -140,7 +140,7 @@ wandb 워크스페이스에서 다음 그림처럼 한 sweep 별 시각화 자�
 마찬가지로 validation loss 도 감소하는 것을 볼 수 있다. 
 하지만 train loss와 다르게 가끔 튀는 현상이 발생한다. 모델은 train data 를 기반으로 학습이 되지만 validation loss는 모델이 처음 보는 데이터, 즉 학습할때 이용하지 않는 데이터에 대한 loss이기에 꼭 꾸준히 감소하지는 않는다.
 
-다음은 Validation accuracy 그래프이다.
+Validation accuracy 
 
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/eb631da4-ccaa-4d60-8b4a-28dc63b4e8ba">
 
@@ -151,22 +151,22 @@ wandb 워크스페이스에서 다음 그림처럼 한 sweep 별 시각화 자�
 
 위 그래프에서 해당 모델의 추이는 serene-sweep-12 에서 확인할 수 있다.
 
-다음으로 ResNet34 모델에 대해서 같은 형식으로 살펴볼 것이다.
+#### ResNet34
 총 hyperparameter searching 하는데 걸린 시간은 4h 27m 이다.
 
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/b70df130-d294-433b-8e8a-78219ec28058">
 
-다음은 Train loss 그래프이다. 
+Train loss 
 
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/d1b33546-e022-4626-adc0-9b03b80298ff">
 
 
-다음은 Validation loss 그래프이다. 
+Validation loss
 
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/71f98f66-52b6-4678-b18e-bd3fc9cb20ef">
 
 
-다음은 Validation accuracy 그래프이다.
+Validation accuracy 
 
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/88aee40e-2200-4e56-9d35-d5eeb49c53e5">
 

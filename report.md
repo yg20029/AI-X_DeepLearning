@@ -176,7 +176,34 @@ wandb 워크스페이스에서 시각화 한 결과입니다.
 
 ResNet34 의 경우 경우 batch_size = 32, epochs = 10, learning_rate: 0.001, SGD optimizer (momentum = 0.9),  weight_decay = 0.001 의 조합으로 train 한 모델이 validation accuracy 0.952 로 가장 좋은 generalization ability 를 보여주었다. 해당 모델의 추이는 restful-sweep-10 으로 확인 할 수 있다.
 
-우리가 직접 수집한 몇가지 test data로 모델의 분류 여부를 확인해보려 한다.
+하이퍼파라미터 서칭을 통해 최적의 모델을 찾은 후 이를 이용해 제공된 500개의 test set을 이용해 final test accuracy를 도출해 보았다.
+
+물론 모델을 처음 훈련할 때 사용한 validation transform 을 먼저 test set 이미지에 적용해야 한다. 여기에 IMAGENET1K_V1 의 평균과 표준편차로 normalization 을 진행하는 것과 224*224 로 픽셀 사이즈를 맞추는 것이 있다. 간단한 변형을 거친 후 모델이 보는 이미지는 다음과 같다.
+
+![image](https://github.com/user-attachments/assets/e3fd2624-8abe-4d2a-8387-f951bffaeeae)
+
+이미지 위에 있는 class가 모델이 예측한 class이다.
+
+Test set 에 대한 최종 정확도는 96% 가 나왔다.
+
+![image](https://github.com/user-attachments/assets/bd275b0b-ca38-402f-98b9-d89f71bc05f8)
+
+이외에도 우리가 이전에 직접 찍었던 사진들을 모델에 넣어 보았다.
+
+![image](https://github.com/user-attachments/assets/add30114-f87c-40d9-bb3e-4b3c7aaf7dad)
+
+![image](https://github.com/user-attachments/assets/8deca5ac-b555-4128-92ab-d113ad85d47a)
+
+![image](https://github.com/user-attachments/assets/1375cbaa-799e-4b3e-b7eb-96b5e5751244)
+
+![image](https://github.com/user-attachments/assets/6d8d1463-a2b9-49b7-b80b-5ed3ae40818c)
+
+축구 사진이 ampute football로 분류 된 이유는 100개의 클래스에 축구가 없었기 때문이다. 하지만 장애인 축구인 ampute football이 class로 있었기에 축구와 가장 가까운 종목인 ampute football로 분류된 것으로 보인다.
+
+결론적으로 우리는 모델이 본적 없는 새로운 데이터에 대한 검증을 통해 스포츠 카테고리 분류에 모델이 우수한 성능을 보임을 확인할 수 있었다.
+
+
+
 
 ## V. Related Work (e.g., existing studies)
 
@@ -200,6 +227,16 @@ wandb : 딥러닝 실험 과정을 손쉽게 Tracking하고, 시각화해서 하
 
 ResNet: Deep Residual Learning for Image Recognition (He et al., 2015): ResNet 모델에 대한 기초적인 논문으로, ResNet의 구성을 이해하고, 하이퍼 파라미터의 역할을 이해하는 과정에 도움을 주었다.
 
+## VI. Conclusion: Discussion
+
+이번 프로젝트를 통해 ResNet를 활용한 스포츠 이미지 분류 시스템의 구축과 최적화에 성공하였다. 특히 사전 학습된 ResNet모델은 적은 epoch로도 높은 정확도를 달성하며, 전이 학습의 효과를 확실히 입증하였다.
+
+하이퍼파라미터 탐색 과정에서 랜덤 하이퍼파라미터 서칭(Random Search)을 활용하여 학습률, 배치 크기, 옵티마이저 등의 다양한 조합을 효율적으로 탐색할 수 있었다. 이 과정은 전체 파라미터 공간을 탐색하지 않으면서도 최적의 조합을 빠르게 찾는 데 큰 도움을 주었으며, 하이퍼파라미터가 모델 성능에 미치는 영향을 체계적으로 분석할 수 있었다. 
+또한, 제한된 데이터셋과 적은 학습 시간에도 불구하고 ResNet모델의 강력한 Feature extraction능력을 통해 뛰어난 성능을 달성하였다. 이는 데이터가 부족한 환경에서도 사전 학습된 모델을 활용하면 효과적인 성능 향상이 가능함을 보여준다.
+
+Weights & Biases를 사용한 실험의 실시간 메트릭 추적과 시각화는 실험 과정을 효율적이고 투명하게 관리할 수 있도록 도왔다. 하이퍼파라미터 변경에 따른 성능 변화를 직관적으로 확인할 수 있었으며, 이는 실험의 생산성과 신뢰성을 크게 높였으며 시각화가 프로젝트 진행에 미치는 영향을 체감할 수 있었다.
+
+이번 프로젝트는 딥러닝 모델 개발 및 최적화 과정에서 얻은 중요한 통찰과 함께 전이 학습과 하이퍼파라미터 서칭의 실질적인 가치를 확인할 수 있는 기회였다. 향후 연구에서는 데이터 증강 기법의 다양화를 통해 데이터셋 불균형 문제를 개선하고, 보다 복잡한 모델 아키텍처를 도입하여 추가적인 성능 향상을 목표할 예정이다.
 
 
 

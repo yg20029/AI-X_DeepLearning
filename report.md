@@ -190,13 +190,7 @@ Test set 에 대한 최종 정확도는 96% 가 나왔다.
 
 이외에도 우리가 이전에 직접 찍었던 사진들을 모델에 넣어 보았다.
 
-![image](https://github.com/user-attachments/assets/add30114-f87c-40d9-bb3e-4b3c7aaf7dad)
-
-![image](https://github.com/user-attachments/assets/8deca5ac-b555-4128-92ab-d113ad85d47a)
-
-![image](https://github.com/user-attachments/assets/1375cbaa-799e-4b3e-b7eb-96b5e5751244)
-
-![image](https://github.com/user-attachments/assets/6d8d1463-a2b9-49b7-b80b-5ed3ae40818c)
+![image](https://github.com/user-attachments/assets/add30114-f87c-40d9-bb3e-4b3c7aaf7dad) ![image](https://github.com/user-attachments/assets/8deca5ac-b555-4128-92ab-d113ad85d47a) ![image](https://github.com/user-attachments/assets/1375cbaa-799e-4b3e-b7eb-96b5e5751244) ![image](https://github.com/user-attachments/assets/6d8d1463-a2b9-49b7-b80b-5ed3ae40818c)
 
 축구 사진이 ampute football로 분류 된 이유는 100개의 클래스에 축구가 없었기 때문이다. 하지만 장애인 축구인 ampute football이 class로 있었기에 축구와 가장 가까운 종목인 ampute football로 분류된 것으로 보인다.
 

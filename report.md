@@ -31,9 +31,9 @@ AI-X 딥러닝 : 최종 프로젝트를 위한 블로그
 
 이 데이터셋을 활용하여 스포츠 이미지를 학습하고, 모델이 다양한 스포츠 활동을 정확히 분류할 수 있도록 하는 것이 목표이다. 이 프로젝트를 통해 이미지 분류 모델의 구축 및 평가, 전이 학습 적용 등 여러 딥러닝 기술을 직접 실험할 수 있다.
 
-100가지 스포츠 데이터 예시
+100가지 스포츠 데이터 종목별 예시
 
-<img width="600" alt="image" src="https://github.com/user-attachments/assets/17f13efb-1fb1-478e-b22f-175ab982d0a4">
+<img width="1000" alt="image" src="https://github.com/user-attachments/assets/17f13efb-1fb1-478e-b22f-175ab982d0a4">
 
 
 데이터 다운로드 링크
@@ -66,6 +66,33 @@ ResNet의 핵심 개념은 잔차 학습(Residual Learning)으로, 깊은 네트
 <img width="800" alt="image" src="https://github.com/user-attachments/assets/b0003f19-18d2-491d-8216-dd4677e49832">
 
 ResNet 모델에서 조절 할 수 있는 하이퍼 파라미터는 learning_rate, batch_size, epochs, weight_decay, optimizer등이 존재한다. learning_rate는 모델이 가중치를 업데이트할 때 사용하는 스텝 크기를 결정한다. batch_size는 한 번의 학습 업데이트에서 처리되는 데이터 샘플의 수를 나타낸다. epochs 전체 데이터셋을 몇 번 학습하는지 나타낸다. weight_decay는 모델의 가중치에 대해 L2 정규화를 적용하여 과적합을 방지하는 데 사용한다. optimizer는 가중치를 업데이트하는 방식이다. SDG와 ADAM의 두 가지를 사용했다. SDG는 기울기(Gradient)를 사용해 손실 함수의 값을 최소화하는 방향으로 모델의 가중치를 업데이트하는 기본적인 최적화 알고리즘이다. ADAM은 학습률을 자동으로 조정하며 SGD의 단점을 개선한 최적화 알고리이다.
+
+###Data preprocessing
+
+머신러닝에서 모델만큼이나 중요한것이 data preprocessing 이다. 
+
+우리가 가지고 있는 train 데이터는 총 13493개다. 하지만 총 class 수는 100 개로 데이터셋의 크기가 많다고 볼 수 는 없다. 따라서 overfitting을 줄이고 generalization ability 를 높이기 위해 적당한 augmentation 을 줄 필요가 있다. 
+우리가 적용한 첫번째 augmentation 은 가장 기초적인 것 중 하나로서 사진을 0.5(default) 확률로 좌 우로 뒤집는 것이다. 이를 위해 transforms.RandomHorizontalFlip() 을 이용했으며, 다음 그림은 이 augmentation을 적용한 예시이다.
+
+![image](https://github.com/user-attachments/assets/7b47fd47-db25-4ef6-a0aa-ca433fdb6eee)
+
+
+다음으로 이미지를 랜덤한 비율로 자른 후 이를 지정 픽셀(224*224)로 확대하여 데이터로 활용하는 transforms.RandomResizedCrop(224) 도 활용하였다. 예시는 다음과 같다.
+
+![image](https://github.com/user-attachments/assets/982c00c1-2daa-4662-bd64-7e473289934a)
+
+
+또한 우리는 IMAGENET1K_V1 데이터셋에 최적화된 model parameter을 초기 파라미터로 두고 train을 하였기에  IMAGENET1K_V1의 각 채널(R, G, B)의 평균과 표준편차를 가지고 데이터들에 normalization 을 진행하였다.
+또한 모든 이미지 데이터는 224*224 모양으로 변환하여 사용하였다.
+
+다음은 사용한 DataPreprocessing 코드이다
+
+![image](https://github.com/user-attachments/assets/4a43671d-2a37-4339-ba87-8f073e78224d)
+
+DataPreprocessing 과정을 거치고 나면, 우리 눈으로는 알아볼 수 없지만 컴퓨터는 더 잘 인식하는 데이터가 된다. 아래 사진은 그 예시이다.
+
+![image](https://github.com/user-attachments/assets/fee1674d-99a5-4f41-9ecf-1f30e382304c)
+
 
 참고 문헌은 다음과 같다. 
 https://arxiv.org/pdf/1512.03385
@@ -153,17 +180,29 @@ ResNet34 의 경우 경우 batch_size = 32, epochs = 10, learning_rate: 0.001, S
 
 ##V. Related Work (e.g., existing studies)
 
-torch
+###1. 라이브러리 및 프레임워크
 
-torch.utils.data.DataLoader
+PyTorch: PyTorch는 모델 개발을 위한 주요 딥러닝 프레임워크로 사용되었다. 텐서 등의 다양한 수학 함수가 포함되어 있으며, numpy와 유사한 구조를 가진다.
 
-torch.utils.data.Dataset
+Torchvision: 사전 학습된 모델(예: ResNet-34) 및 데이터 증강, 데이터셋 로드와 같은 필수 유틸리티에 사용되었다.
 
-torchvision.datasets
+wandb: wandb 사이트와 연결하여 모델의 하이퍼 파라미터 서칭을 하는 과정에서 사용되었다. 
 
-torchvision.transforms
+###2. 도구 및 플랫폼
 
-torchvision.models
+Google Colab: GPU 지원을 통해 효율적인 모델 학습을 제공한 주요 개발 환경으로 사용되었다.
+
+Kaggle: 고품질의 라벨링된 데이터를 제공하여 프로젝트에서 사용된 100가지 스포츠 데이터셋의 출처가 되었다.
+
+wandb : 딥러닝 실험 과정을 손쉽게 Tracking하고, 시각화해서 하이퍼파라미터 최적화, 실험 추적 및 결과 시각화를 지원하는 Tool이다 
+
+###3. 기존 연구 및 문헌
+
+ResNet: Deep Residual Learning for Image Recognition (He et al., 2015): ResNet 모델에 대한 기초적인 논문으로, ResNet의 구성을 이해하고, 하이퍼 파라미터의 역할을 이해하는 과정에 도움을 주었다.
+
+
+
+
 
 
 

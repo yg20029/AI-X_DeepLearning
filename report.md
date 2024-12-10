@@ -1,4 +1,4 @@
-# AI-X_DeepLearning
+# 100 Sports Image Classification
 AI-X 딥러닝 : 최종 프로젝트를 위한 블로그
 
 ## Members:

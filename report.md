@@ -126,7 +126,7 @@ https://github.com/yg20029/AI-X_DeepLearning/blob/main/ResNet18_tuning.ipynb
 
 ResNet 원문에서는 epoch가 진행됨에 따라 validatino loss 가 더 이상 감소하지 않으면 learning rate을 낮추는 learning rate scheduler을 사용했다. 하지만 우리는 Imagenet을 기반으로 pre-trained된 weight을 가져와 우리가 가진 100 sports dataset에 추가로 train을 진행하였으므로 충분한 accuracy를 달성하는데 많은 epoch가 필요하지 않을 것이라 추측하였다. 따라서 learning rate scheduler을 사용하지 않았다.
 
-사용한 두 모델, 그리고 위의 하이퍼파라미터 조합 총 324가지이다. 하지만 이 모든 조합으로 모델 트레이닝을 하기에는 언제나 그렇듯이 시간과 컴퓨팅 용량이 충분치 않다. 따라서 우리는 랜덤으로 모델 15가지를 시도해 보았다.
+사용한 두 모델, 그리고 위의 하이퍼파라미터 조합 총 324가지이다. 하지만 이 모든 조합으로 모델 트레이닝을 하기에는 언제나 그렇듯이 시간과 컴퓨팅 용량이 충분치 않다. 따라서 우리는 랜덤으로 모델당 15가지 조합을 시도해 보았다.
 
 하이퍼파라미터 튜닝을 위해서 우리는 wandb라는 파이썬 라이브러리를 사용했다. Wandb는 머신러닝 및 딥러닝 프로젝트의 추이 추적, 시각화, 모델 관찰 등을 지원하는 도구로 특히 하이퍼파라미터 서칭을 지원하고 이후 각 모델들의 차이와 추이를 시각화 하는데 좋다. 
 

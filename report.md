@@ -270,6 +270,11 @@ Weights & Biases를 사용한 실험의 실시간 메트릭 추적과 시각화�
 조윤규 : 프로젝트 자료 준비, 시각화 작업, 모델 평가, 블로그 관리, 기록
 
 
+## VII. Presentation Video
+
+https://www.youtube.com/watch?v=o9LXAYJte_s
+
+
 
 
 

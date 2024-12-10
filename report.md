@@ -68,7 +68,7 @@ ResNet의 핵심 개념은 잔차 학습(Residual Learning)으로, 깊은 네트
 ResNet의 참고 문헌은 다음과 같다. 
 https://arxiv.org/pdf/1512.03385
 
-ResNet 모델에서 조절 할 수 있는 하이퍼 파라미터는 learning_rate, batch_size, epochs, weight_decay, optimizer등이 존재한다. 
+ResNet 모델 train에서 조절 할 수 있는 하이퍼 파라미터는 learning_rate, batch_size, epochs, weight_decay, optimizer등이 존재한다. 
 
 learning_rate는 모델이 가중치를 업데이트할 때 사용하는 스텝 크기를 조절하는데, 이를 통해서 학습 속도와 학습 정확도를 조절 할 수 있다. 
 

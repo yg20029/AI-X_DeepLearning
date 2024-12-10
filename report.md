@@ -78,7 +78,7 @@ epochs는 전체 데이터셋을 몇 번 학습하는지 나타내는데, 대부
 
 optimizer는 가중치를 업데이트하는 방식이다. SDG와 ADAM의 두 가지를 사용했다. SDG는 기울기(Gradient)를 사용해 손실 함수의 값을 최소화하는 방향으로 모델의 가중치를 업데이트하는 기본적인 최적화 알고리즘이다 우리가 사용한 ResNet에서는 기본 SGD optimizer에 0.9의 momentum을 건 optimizer를 사용했다. 일반 SGD optimizer에 모멘텀을 적용하면 이전 기울기도 최적화에 이용해 느린 최적화와 같은 일반 SGD의 문제점을 해결한다. ADAM은 학습률을 자동으로 조정하며 이전 단계의 기울기의 평균과 분산을 통해 SGD의 단점을 개선한 최적화 알고리즘이다.
 
-weight_decay는 모델의 가중치에 대해 L2 정규화를 적용하여 과적합을 방지하는 데 사용한다. 
+weight_decay는 모델의 가중치에 대해 L2 정규화를 적용하여 과적합을 방지하는 데 사용한다. weight_decay 값은 optimizer 내에서 선언하면 된다. 
 
 ### Data preprocessing
 

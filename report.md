@@ -109,6 +109,14 @@ DataPreprocessing 과정을 거치고 나면, 컴퓨터가 인식하는 이미�
 
 ## IV. Evaluation & Analysis
 
+Hyperparameter tuning 에 사용한 Python 코드와 출력값은 여기서 확인 할 수 있다
+
+ResNet34
+https://github.com/yg20029/AI-X_DeepLearning/edit/main/report.md#:~:text=ResNet_34_tuning-,.,-ipynb
+
+ResNet18
+https://github.com/yg20029/AI-X_DeepLearning/blob/main/ResNet18_tuning.ipynb
+
 ### Validation
 
 우리는 두 가지 ResNet 모델(ResNet18, ResNet34) 로 스포츠 데이터를 학습해 보았다.

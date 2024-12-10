@@ -120,7 +120,7 @@ DataPreprocessing 과정을 거치고 나면, 컴퓨터가 인식하는 이미�
 
 하이퍼파라미터 튜닝을 위해서 우리는 wandb라는 파이썬 라이브러리를 사용했다. Wandb는 머신러닝 및 딥러닝 프로젝트의 추이 추적, 시각화, 모델 관찰 등을 지원하는 도구로 특히 하이퍼파라미터 서칭 이후 각 모델들의 차이를 시각화 하는데 좋다. 
 
-Wandb sweep을 거친 후 나온 파이썬 로그는 다음과 같다.
+Wandb sweep 중 한 hyperparameter 조합으로 model train을 한 후 나온 파이썬 로그는 다음과 같다.
 
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/aa086cc7-8ba8-491b-8e53-1b2359ae7886">
 

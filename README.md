@@ -7,7 +7,7 @@ AI-X 딥러닝 : 최종 프로젝트를 위한 블로그
 > ##### 조윤규, 데이터사이언스학과, yg20029@gmail.com
 
 
-## I.	Proposal (Option 1or 2)–This should be filled bysometime in early Nov.
+## I.	Proposal 
 ### -Motivation: Why are you doing this?
 이 프로젝트를 통해 100가지 스포츠 이미지를 분류하며, 딥러닝과 이미지 분류의 핵심 기술을 탐구하고 이를 실제 문제에 적용해보는 경험을 쌓고자 한다. 또한, 이 프로젝트는 딥러닝 모델 설계, 전이 학습, 하이퍼파라미터 튜닝 등 딥러닝의 여러 중요한 개념을 실습할 수 있는 기회를 제공한다.
 이러한 과정을 통해 딥러닝에 대한 이해도를 높이고, 실제 데이터를 다루며 문제 해결 능력을 키우는 데 도움이 될 것이라 생각한다. 이 데이터셋을 활용해 높은 정확도를 달성함으로써, 향후 이미지 분석 프로젝트에 기여하는 것을 목표로 한다.
@@ -39,7 +39,7 @@ AI-X 딥러닝 : 최종 프로젝트를 위한 블로그
 데이터 다운로드 링크
 https://www.kaggle.com/datasets/gpiosenka/sports-classification?select=train
 
-## III.Methodology -Explaining your choice of algorithms (methods)-Explaining features (if any)
+## III.Methodology -Explaining your choice of algorithms (methods)-Explaining features 
 
 ### -Explaining your choice of algorithms (methods)
 이번 프로젝트에서 이용할 모델의 기반은 CNN 모델이다.
@@ -230,7 +230,7 @@ Test set 에 대한 최종 정확도는 96% 가 나왔다.
 
 
 
-## V. Related Work (e.g., existing studies)
+## V. Related Work 
 
 ### 1. 라이브러리 및 프레임워크
 
